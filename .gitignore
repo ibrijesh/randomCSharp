@@ -1,0 +1,49 @@
+## Ignore build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]ebug-windows/
+[Dd]ebug-linux/
+[Dd]ebug-osx/
+[Dd]ebug-netcore/
+bin/
+obj/
+out/
+
+## User-specific files
+.idea/
+.vscode/
+.vs/
+
+## Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+## Windows Installer files (ARM)
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
+
+## Windows image files
+Thumbs.db
+ehthumbs.db
+
+## .NET Framework specific
+web.config
+packages.config
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## JetBrains Rider
+.idea/
+
+## Node.js dependencies (if using Node.js in your project)
+node_modules/
+
+## ASP.NET temporary files
+Temporary ASP.NET Files/
