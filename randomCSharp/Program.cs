@@ -18,5 +18,7 @@ public class Program
 
         BaseClass derivedClass2 = new DerivedClass("DerivedObject2", 55);
         derivedClass2.ShowMessage();
+
+        Random.Learn();
     }
 }
