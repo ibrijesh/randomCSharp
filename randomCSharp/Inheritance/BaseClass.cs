@@ -14,7 +14,7 @@ public class BaseClass
         Console.WriteLine($"BaseClass: {name}");
     }
 
-    public virtual void ShowMessage()
+    public new void ShowMessage()
     {
         Console.WriteLine("message from BaseClass ");
     }

@@ -9,12 +9,14 @@ public class Program
         Console.WriteLine("Hello World");
 
         BaseClass baseClass = new BaseClass("BaseObject");
-        baseClass.DisplayInfo();
         baseClass.ShowMessage();
 
 
         DerivedClass derivedClass = new DerivedClass("DerivedObject", 42);
-        derivedClass.DisplayInfo();
         derivedClass.ShowMessage();
+
+
+        BaseClass derivedClass2 = new DerivedClass("DerivedObject2", 55);
+        derivedClass2.ShowMessage();
     }
 }
