@@ -10,11 +10,11 @@ public class Program
 
         BaseClass baseClass = new BaseClass("BaseObject");
         baseClass.DisplayInfo();
+        baseClass.ShowMessage();
 
 
         DerivedClass derivedClass = new DerivedClass("DerivedObject", 42);
         derivedClass.DisplayInfo();
-        
-        
+        derivedClass.ShowMessage();
     }
 }
