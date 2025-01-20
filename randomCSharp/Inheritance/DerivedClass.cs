@@ -13,4 +13,9 @@ public class DerivedClass : BaseClass
     {
         Console.WriteLine($"Derived Display: {name}, {DerivedValue}");
     }
+
+    public override void ShowMessage()
+    {
+        Console.WriteLine("Message from DerivedClass");
+    }
 }
