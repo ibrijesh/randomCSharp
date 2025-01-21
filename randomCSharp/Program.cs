@@ -1,3 +1,4 @@
+using randomCSharp.Delegate;
 using randomCSharp.Inheritance;
 
 namespace randomCSharp;
@@ -20,5 +21,6 @@ public class Program
         derivedClass2.ShowMessage();
 
         Random.Learn();
+        EmployeeLogic.Run();
     }
 }
