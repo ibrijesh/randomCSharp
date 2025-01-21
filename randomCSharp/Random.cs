@@ -4,6 +4,12 @@ namespace randomCSharp;
 
 public class Random
 {
+    static void Increment(ref int number)
+    {
+        number++;
+    }
+
+
     public static void Learn()
     {
         // Array List
@@ -19,5 +25,9 @@ public class Random
         {
             Console.WriteLine(arrayList[i]);
         }
+
+        int number = 2;
+        Increment(ref number);
+        Console.WriteLine(number);
     }
 }
