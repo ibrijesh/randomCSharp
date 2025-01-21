@@ -22,7 +22,7 @@ public class Random
         _hash.Add("apple", 1);
         _hash.Add("banana", 2);
         _hash.Add("orange", 3);
-        //_hash.Add("apple", 4);
+        _hash.Add("apple", 4);
         //_hash["apple"] = 6;
 
         foreach (var map in _hash)
