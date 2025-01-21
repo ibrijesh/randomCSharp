@@ -1,5 +1,4 @@
 using System.Collections;
-using System.ComponentModel.DataAnnotations;
 
 namespace randomCSharp;
 
@@ -18,12 +17,11 @@ public class Random
 
     static void UsingDataStructure()
     {
-        Dictionary<string, int> _hash = new Dictionary<string, int>();
+        SortedDictionary<string, int> _hash = new SortedDictionary<string, int>();
 
         _hash.Add("apple", 1);
-        _hash.Add("banana", 2);
         _hash.Add("orange", 3);
-        _hash.Add("apple", 4);
+        _hash.Add("banana", 2);
         _hash["apple"] = 6;
 
         foreach (var (key, value) in _hash)
