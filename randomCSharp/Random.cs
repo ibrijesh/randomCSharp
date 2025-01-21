@@ -15,6 +15,23 @@ public class Random
     }
 
 
+    static void UsingDataStructure()
+    {
+        Dictionary<string, int> _hash = new Dictionary<string, int>();
+
+        _hash.Add("apple", 1);
+        _hash.Add("banana", 2);
+        _hash.Add("orange", 3);
+        //_hash.Add("apple", 4);
+        //_hash["apple"] = 6;
+
+        foreach (var map in _hash)
+        {
+            Console.WriteLine(map.Key + " = " + map.Value);
+        }
+    }
+
+
     public static void Learn()
     {
         // Array List
@@ -34,5 +51,8 @@ public class Random
         int result;
         CalculateSum(3, 5, out result);
         Console.WriteLine(result);
+
+
+        UsingDataStructure();
     }
 }
