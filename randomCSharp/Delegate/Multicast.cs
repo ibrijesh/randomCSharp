@@ -1,28 +1,18 @@
 namespace randomCSharp.Delegate;
 
-delegate int Calculation(int x, int y);
+//  public delegate void Action<T1, T2, ..., T16>(T1 arg1, T2 arg2, ..., T16 arg16);
 
 public class Multicast
 {
     public static void Run()
     {
-        // Create Multicast delegate
-        Calculation calc = Add;
-        calc += Multiply;
-
-        // Invoke the delegate
-        int result = calc(5, 10);
-
-        Console.WriteLine($"Result of last invoked method: {result}");
-    }
-
-    public static int Add(int x, int y)
-    {
-        return x + y;
-    }
-
-    public static int Multiply(int x, int y)
-    {
-        return x * y;
+        Action action = () => Console.WriteLine("Action Delegate is called!");
+        action();
+        
+        Action<string> greet = name => Console.WriteLine($"Hello, {name}!");
+        greet("Alice"); // Output: Hello, Alice!
+        
+        Action<int, int> add = (a, b) => Console.WriteLine(a + b);
+        add(5, 7); // Output: 12
     }
 }
