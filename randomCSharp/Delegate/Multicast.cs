@@ -6,13 +6,10 @@ public class Multicast
 {
     public static void Run()
     {
-        Action action = () => Console.WriteLine("Action Delegate is called!");
-        action();
-        
-        Action<string> greet = name => Console.WriteLine($"Hello, {name}!");
-        greet("Alice"); // Output: Hello, Alice!
-        
-        Action<int, int> add = (a, b) => Console.WriteLine(a + b);
-        add(5, 7); // Output: 12
+        Func<int, int, int> multiply = (a, b) => a * b;
+        Console.WriteLine(multiply(3, 5));
+
+        Func<int, int, int, int> add = (a, b, c) => a + b + c;
+        Console.WriteLine(multiply(2, 3));
     }
 }
