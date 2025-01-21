@@ -1,40 +1,28 @@
 namespace randomCSharp.Delegate;
 
-delegate void Notify();
+delegate int Calculation(int x, int y);
 
 public class Multicast
 {
     public static void Run()
     {
-        // Create a multicast delegate
-        Notify notify = FirstNotification;
-        notify += SecondNotification;
-        notify += ThirdNotification;
+        // Create Multicast delegate
+        Calculation calc = Add;
+        calc += Multiply;
 
-        // Invoke the multicast delegate
-        Console.WriteLine("\nInvoking multicast delegate:");
-        notify();
+        // Invoke the delegate
+        int result = calc(5, 10);
 
-        // Remove a method from the delegate
-        notify -= SecondNotification;
-
-        Console.WriteLine("\nAfter removing SecondNotification:");
-        notify();
+        Console.WriteLine($"Result of last invoked method: {result}");
     }
 
-
-    public static void FirstNotification()
+    public static int Add(int x, int y)
     {
-        Console.WriteLine("First notification");
+        return x + y;
     }
 
-    public static void SecondNotification()
+    public static int Multiply(int x, int y)
     {
-        Console.WriteLine("Second notification");
-    }
-
-    public static void ThirdNotification()
-    {
-        Console.WriteLine("Third notification");
+        return x * y;
     }
 }
