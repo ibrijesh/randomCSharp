@@ -6,10 +6,10 @@ public class Multicast
 {
     public static void Run()
     {
-        Func<int, int, int> multiply = (a, b) => a * b;
-        Console.WriteLine(multiply(3, 5));
+        Predicate<int> isEven = (x) => x % 2 == 0;
+        Console.WriteLine(isEven(4));
 
-        Func<int, int, int, int> add = (a, b, c) => a + b + c;
-        Console.WriteLine(multiply(2, 3));
+        Predicate<string> startsWithA = (str) => str.StartsWith("A");
+        Console.WriteLine(startsWithA("Ameer"));
     }
 }
