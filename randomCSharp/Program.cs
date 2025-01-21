@@ -1,5 +1,6 @@
 using randomCSharp.Asynchronous;
 using randomCSharp.Delegate;
+using randomCSharp.DSA;
 using randomCSharp.Inheritance;
 
 namespace randomCSharp;
@@ -25,8 +26,11 @@ public class Program
         EmployeeLogic.Run();
         Multicast.Run();
 
-        Console.WriteLine("Start");
-        await Async.Run(); // Async method call
-        Console.WriteLine("End");
+        // Console.WriteLine("Start");
+        // await Async.Run(); // Async method call
+        // Console.WriteLine("End");
+
+
+        Solution.PrintList(Solution.CountFrequencyOfFruits(ref Solution.fruits));
     }
 }
