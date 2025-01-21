@@ -17,16 +17,19 @@ public class Random
 
     static void UsingDataStructure()
     {
-        SortedDictionary<string, int> _hash = new SortedDictionary<string, int>();
+        SortedSet<int> numbers = new SortedSet<int>();
 
-        _hash.Add("apple", 1);
-        _hash.Add("orange", 3);
-        _hash.Add("banana", 2);
-        _hash["apple"] = 6;
+        numbers.Add(1);
+        numbers.Add(2);
+        numbers.Add(3);
+        numbers.Add(1);
+        numbers.Add(2);
+        numbers.Add(3);
+        numbers.Add(4);
 
-        foreach (var (key, value) in _hash)
+        foreach (var number in numbers)
         {
-            Console.WriteLine(key + " = " + value);
+            Console.WriteLine(number);
         }
     }
 
