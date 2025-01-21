@@ -22,5 +22,6 @@ public class Program
 
         Random.Learn();
         EmployeeLogic.Run();
+        Multicast.Run();
     }
 }
