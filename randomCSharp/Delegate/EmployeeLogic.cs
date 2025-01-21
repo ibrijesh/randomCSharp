@@ -12,16 +12,12 @@ public class EmployeeLogic
         employees.Add(new Employee() { Id = 104, Name = "Todd", Salary = 6000, Experience = 6, Level = 5 });
     }
 
-    public static bool Promote(Employee employee)
-    {
-        return employee.Experience > 2;
-    }
 
     public static void Run()
     {
         Console.WriteLine("Employee Logic");
-        
-        IsPromotable del = new IsPromotable(Promote);
+
+        IsPromotable del = new IsPromotable(emp => emp.Experience > 5);
         Employee.PromoteEmployee(employees, del);
     }
 }
