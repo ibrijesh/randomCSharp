@@ -1,3 +1,4 @@
+using randomCSharp.Asynchronous;
 using randomCSharp.Delegate;
 using randomCSharp.Inheritance;
 
@@ -5,7 +6,7 @@ namespace randomCSharp;
 
 public class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         Console.WriteLine("Hello World");
 
@@ -23,5 +24,9 @@ public class Program
         Random.Learn();
         EmployeeLogic.Run();
         Multicast.Run();
+
+        Console.WriteLine("Start");
+        await Async.Run(); // Async method call
+        Console.WriteLine("End");
     }
 }
