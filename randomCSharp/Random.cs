@@ -1,4 +1,5 @@
 using System.Collections;
+using System.ComponentModel.DataAnnotations;
 
 namespace randomCSharp;
 
@@ -23,11 +24,11 @@ public class Random
         _hash.Add("banana", 2);
         _hash.Add("orange", 3);
         _hash.Add("apple", 4);
-        //_hash["apple"] = 6;
+        _hash["apple"] = 6;
 
-        foreach (var map in _hash)
+        foreach (var (key, value) in _hash)
         {
-            Console.WriteLine(map.Key + " = " + map.Value);
+            Console.WriteLine(key + " = " + value);
         }
     }
 
