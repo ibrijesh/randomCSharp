@@ -32,5 +32,7 @@ public class Program
 
 
         Solution.PrintList(Solution.CountFrequencyOfFruits(ref Solution.fruits));
+
+        Solution.PrintListwithKeyValue(Solution.CountFruits(ref Solution.fruitsWithValue));
     }
 }
