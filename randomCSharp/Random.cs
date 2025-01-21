@@ -9,6 +9,11 @@ public class Random
         number++;
     }
 
+    static void CalculateSum(int a, int b, out int sum)
+    {
+        sum = a + b;
+    }
+
 
     public static void Learn()
     {
@@ -26,8 +31,8 @@ public class Random
             Console.WriteLine(arrayList[i]);
         }
 
-        int number = 2;
-        Increment(ref number);
-        Console.WriteLine(number);
+        int result;
+        CalculateSum(3, 5, out result);
+        Console.WriteLine(result);
     }
 }
