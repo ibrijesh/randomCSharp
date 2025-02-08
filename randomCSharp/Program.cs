@@ -7,7 +7,7 @@ namespace randomCSharp;
 
 public class Program
 {
-    static async Task Main(string[] args)
+    static async Task Mains(string[] args)
     {
         Console.WriteLine("Hello World");
 
@@ -22,17 +22,23 @@ public class Program
         BaseClass derivedClass2 = new DerivedClass("DerivedObject2", 55);
         derivedClass2.ShowMessage();
 
-        Random.Learn();
-        EmployeeLogic.Run();
-        Multicast.Run();
+        // Random.Learn();
+        // EmployeeLogic.Run();
+        // Multicast.Run();
 
         // Console.WriteLine("Start");
         // await Async.Run(); // Async method call
         // Console.WriteLine("End");
 
 
-        Solution.PrintList(Solution.CountFrequencyOfFruits(ref Solution.fruits));
+        //Solution.PrintList(Solution.CountFrequencyOfFruits(ref Solution.fruits));
 
-        Solution.PrintListwithKeyValue(Solution.CountFruits(ref Solution.fruitsWithValue));
+        //Solution.PrintListwithKeyValue(Solution.CountFruits(ref Solution.fruitsWithValue));
+
+        //MultiThread.MultiThread.Run();
+        
+        
+
+        //await Task.WhenAll(Async.doSomethingAsync(), Async.doSomethingAsync());
     }
 }
