@@ -7,17 +7,31 @@ public class TryOut
     static async Task Main()
     {
         Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  Before API Call");
-        
+
         string data = await FetchData();
 
         Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  After API Call");
-        
+
         Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  {data}");
+        
+
+        Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId} Delay start ");
+        
+        await Run();
+
+        Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId} Delay Ended ");
     }
-    
+
+
+    static async Task Run()
+    {
+        Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId} Inside Delay function");
+        
+        await Task.Delay(5000);
+    }
+
     static async Task<string> FetchData()
     {
-
         HttpClientHandler handler = new HttpClientHandler
         {
             ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
