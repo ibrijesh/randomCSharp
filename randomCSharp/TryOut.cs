@@ -4,18 +4,18 @@ namespace randomCSharp;
 
 public class TryOut
 {
-    static void Main()
+    static async Task Main()
     {
         Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  Before API Call");
         
-        string data = FetchData();
+        string data = await FetchData();
 
         Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  After API Call");
         
         Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  {data}");
     }
     
-    static string FetchData()
+    static async Task<string> FetchData()
     {
 
         HttpClientHandler handler = new HttpClientHandler
@@ -26,10 +26,10 @@ public class TryOut
         using HttpClient client = new HttpClient(handler);
 
         // Synchronous API call (blocks execution)
-        HttpResponseMessage response = client.GetAsync("https://hub.dummyapis.com/delay?seconds=5").GetAwaiter().GetResult();
+        HttpResponseMessage response = await client.GetAsync("https://hub.dummyapis.com/delay?seconds=5");
 
         // Synchronously read response content
-        string data = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+        string data = await response.Content.ReadAsStringAsync();
 
         return data;
     }
