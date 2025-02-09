@@ -4,36 +4,28 @@ namespace randomCSharp.MultiThread;
 
 public class MultiThreadParallel
 {
-    private static int sum = 0;
-    private static object lockObj = new Object();
-
-
-    public static void CountSum()
+    public static void HeavyComputation()
     {
-        for (int i = 1; i <= 5; ++i)
-        {
-            lock (lockObj) // Ensures thread safety while updating sum
-            {
-                int temp = sum;
-                Thread.Sleep(1);
-                sum = temp + i;
-                Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  , i = {i},  Sum = {sum}");
-            }
-        }
+        double sum = 0;
+
+        for (int i = 0; i < 1_000_000_000; ++i)
+            sum += Math.Sqrt(i);
     }
 
     public static void Main()
     {
         Stopwatch sw = new Stopwatch();
+
+        // Sequential Execution 
         sw.Start();
-        
-        Parallel.Invoke(CountSum, CountSum);
-        
+        for (int i = 0; i < 2; ++i) HeavyComputation();
         sw.Stop();
-        
-        Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  , Sum = {sum}");
-        
-        Console.WriteLine($"Total time taken {sw.ElapsedMilliseconds} ms.");
-        
+        Console.WriteLine($"Sequential Time: {sw.ElapsedMilliseconds} ms");
+
+        // Parallel execution
+        sw.Restart();
+        Parallel.Invoke(HeavyComputation, HeavyComputation);
+        sw.Stop();
+        Console.WriteLine($"Parallel Time: {sw.ElapsedMilliseconds} ms");
     }
 }
