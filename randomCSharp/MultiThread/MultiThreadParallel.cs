@@ -8,7 +8,7 @@ public class MultiThreadParallel
     {
         double sum = 0;
 
-        for (int i = 0; i < 1_000_000_000; ++i)
+        for (int i = 0; i < 1_000_000_00; ++i)
             sum += Math.Sqrt(i);
     }
 
@@ -18,13 +18,13 @@ public class MultiThreadParallel
 
         // Sequential Execution 
         sw.Start();
-        for (int i = 0; i < 2; ++i) HeavyComputation();
+        for (int i = 0; i < 10; ++i) HeavyComputation();
         sw.Stop();
         Console.WriteLine($"Sequential Time: {sw.ElapsedMilliseconds} ms");
 
         // Parallel execution
         sw.Restart();
-        Parallel.Invoke(HeavyComputation, HeavyComputation);
+        Parallel.For(0, 10, _ => HeavyComputation());
         sw.Stop();
         Console.WriteLine($"Parallel Time: {sw.ElapsedMilliseconds} ms");
     }
