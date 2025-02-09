@@ -4,7 +4,7 @@ namespace randomCSharp;
 
 public class TryOut
 {
-    static async Task Main()
+    static async Task Mains()
     {
         Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  Before API Call");
 
