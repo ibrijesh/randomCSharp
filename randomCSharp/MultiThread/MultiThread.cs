@@ -3,16 +3,20 @@ namespace randomCSharp.MultiThread;
 public class MultiThread
 {
     private static int sum = 0;
+    private static object lockObj = new Object();
 
 
     public static void CountSum()
     {
         for (int i = 1; i <= 5; ++i)
         {
-            int temp = sum;
-            Thread.Sleep(1);
-            sum = temp + i;  // // Simulate context switch (increases chances of race condition)
-            Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  , i = {i},  Sum = {sum}");
+            lock (lockObj) // Ensures thread safety while updating sum
+            {
+                int temp = sum;
+                Thread.Sleep(1);
+                sum = temp + i; // // Simulate context switch (increases chances of race condition)
+                Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  , i = {i},  Sum = {sum}");
+            }
         }
     }
 
@@ -29,7 +33,7 @@ public class MultiThread
 
         thread1.Join();
         thread2.Join();
-        
+
         Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  , Sum = {sum}");
     }
 }
