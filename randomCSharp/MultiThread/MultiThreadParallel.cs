@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace randomCSharp.MultiThread;
 
 public class MultiThreadParallel
@@ -22,8 +24,16 @@ public class MultiThreadParallel
 
     public static void Main()
     {
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+        
         Parallel.Invoke(CountSum, CountSum);
         
+        sw.Stop();
+        
         Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId}  , Sum = {sum}");
+        
+        Console.WriteLine($"Total time taken {sw.ElapsedMilliseconds} ms.");
+        
     }
 }
